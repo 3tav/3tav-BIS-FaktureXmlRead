@@ -1,0 +1,1363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="PaketTiskar">
+    <xsd:complexType>
+      <xsd:sequence minOccurs="1" maxOccurs="1">
+		<xsd:element name="stevilo_dokumentov" type="xsd:int"/>
+        <xsd:element name="DokumentTiskar" minOccurs="1" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence minOccurs="1" maxOccurs="1">
+			  <xsd:element name="ZapSt" type="xsd:int"/>
+			  <xsd:element name="Obrazec" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+              <xsd:element name="Verzija" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+              <xsd:element name="TipDokumenta" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+              <xsd:element name="e_racun" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+              <xsd:element name="Prejemnik" minOccurs="1" maxOccurs="1">
+                <xsd:complexType>
+                  <xsd:sequence minOccurs="1" maxOccurs="1">
+                    <xsd:element name="Naziv" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="Naslov" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="Posta" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="GlavaRacuna" minOccurs="1" maxOccurs="1">
+                <xsd:complexType>
+                  <xsd:sequence minOccurs="1" maxOccurs="1">
+                    <xsd:element name="Kraj" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="Datum" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="StevilkaRacuna" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                    <xsd:element name="ObracunskoObdobje" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="StevilkaKupca" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                    <xsd:element name="DavcnaStevilka" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="Naziv" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="Naslov" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="Posta" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="RokPlacila" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="ZnesekPredhodniDolg" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="ZnesekZapadliObroki" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="ZnesekRacun" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="ZnesekPlacilo" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="NazivRacuna" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="BarKoda" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="PostavkeDDV" minOccurs="1" maxOccurs="1">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                          <xsd:element name="PostavkaDDV" minOccurs="1" maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="StopnjaDDV" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ZnesekOsnova" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ZnesekDDV" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ZnesekSkupaj" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                              <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="SklopDokumenta" minOccurs="1" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence minOccurs="1" maxOccurs="1">
+                    <xsd:element name="Elektrika" minOccurs="0" maxOccurs="1">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+						  <xsd:element name="Storno" minOccurs="0" maxOccurs="1" type="xsd:int"/>
+                          <xsd:element name="MerilnoMesto" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+                                <xsd:element name="tipMerilnegaMesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ObdobjeDobave" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SMM" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NacinMerjenja" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NacinObracuna" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ObracunskaMoc" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Varovalke" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="VrstaDobave" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="StevilkaPogodbe" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NazivMerilnegaMesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SODO" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SODO_MM" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="OdjemnaSkupina" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="VrstaTipPlinomera" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PodatekStevcnostanje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="Poraba" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PorabaSkupaj" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PovprecnaDnevnaPoraba" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PovprecnaDnevnaPorabaSLO" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="OdcitekVT" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="StariOdcitekVT" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PorabaVT" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="OdcitekMT" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="StariOdcitekMT" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PorabaMT" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="OdcitekET" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="StariOdcitekET" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PorabaET" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DatumOd" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DatumDo" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PrejetaPlacila" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="IzstavljeniRacuni" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Dolg" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Preplacilo" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="Postavke" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="SkupajZnesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Omreznina" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="Znesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ProcentDelitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="PostavkeSeznam" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Postavke" minOccurs="0" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                              <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                          <xsd:element name="Noga" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                      <xsd:element name="DodatniTekst" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Energent" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="Znesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ProcentDelitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="PostavkeSeznam" minOccurs="0" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Postavke" minOccurs="0" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                              <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                          <xsd:element name="Noga" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                      <xsd:element name="DodatniTekst" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Dajatve" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="Znesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ProcentDelitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="PostavkeSeznam" minOccurs="0" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Postavke" minOccurs="0" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                              <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                          <xsd:element name="Noga" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                      <xsd:element name="DodatniTekst" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="GrafPreteklePorabe" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PL" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="VT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="MT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="ET" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Skupaj" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="GrafTrenutnePorabe" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PL" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="VT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="MT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="ET" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Skupaj" minOccurs="1" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Plin" minOccurs="0" maxOccurs="1">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                          <xsd:element name="MerilnoMesto" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+                                <xsd:element name="tipMerilnegaMesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ObdobjeDobave" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SMM" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NacinMerjenja" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NacinObracuna" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ObracunskaMoc" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Varovalke" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="VrstaDobave" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="StevilkaPogodbe" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NazivMerilnegaMesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SODO" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SODO_MM" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="OdjemnaSkupina" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="VrstaTipPlinomera" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PodatekStevcnostanje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="Poraba" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PorabaSkupaj" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PovprecnaDnevnaPoraba" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ZacetnoStanje" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="KoncnoStanje" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DatumOd" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DatumDo" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="IzstavitevRacun" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="ObdobjeDobave" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SteviloDniDobave" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="UskladitevPorabe" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst3" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst4" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst5" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst6" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst7" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst8" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="Postavke" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="SkupajZnesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Omreznina" minOccurs="1" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="Znesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ProcentDelitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="PostavkeSeznam" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Postavke" minOccurs="1" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                              <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                          <xsd:element name="Noga" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                      <xsd:element name="DodatniTekst" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Energent" minOccurs="1" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="Znesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ProcentDelitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="PostavkeSeznam" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Postavke" minOccurs="1" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                              <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                          <xsd:element name="Noga" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                      <xsd:element name="DodatniTekst" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Dajatve" minOccurs="1" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="Znesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ProcentDelitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="PostavkeSeznam" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Postavke" minOccurs="1" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                              <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                          <xsd:element name="Noga" minOccurs="1" maxOccurs="1">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                      <xsd:element name="DodatniTekst" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="GrafPreteklePorabe" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PL" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="VT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="MT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="ET" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Skupaj" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="GrafTrenutnePorabe" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PL" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="VT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="MT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="ET" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Skupaj" minOccurs="1" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Dobropis" minOccurs="0" maxOccurs="1">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                          <xsd:element name="StevilkaDobropisa" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="SkupajZnesekIzstavljeno" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="SkupajZnesekPrejeto" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="Preplacilo" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="DodatniTeksti" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="DodatniTekst1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="PostavkeDobropisa" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PostavkaDobropisa" minOccurs="1" maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="StevilkaRacuna" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="VrstaRacuna" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumIzstavitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumZapadlosti" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ZnesekIzstavljeno" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="NacinPlacila" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumPlacila" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ZnesekPrejeto" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Opomin" minOccurs="0" maxOccurs="1">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                          <xsd:element name="StevilkaOpomina" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="SkupajZnesekIzstavljeno" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="SkupajZnesekPrejeto" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="Dolg" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="StrosekOpomina" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="DodatniTeksti" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="DodatniTekst1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="PostavkeOpomina" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PostavkaOpomina" minOccurs="1" maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="StevilkaRacuna" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                      <xsd:element name="VrstaRacuna" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumIzstavitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumZapadlosti" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="SaldoIzstavljeno" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="NacinPlacila" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumPlacila" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="SaldoPrejeto" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="ZamudneObresti" minOccurs="0" maxOccurs="1">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                          <xsd:element name="ZnesekObrestiSkupaj" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="DodatniTeksti" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="DodatniTekst1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DodatniTekst2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="PostavkeObresti" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PostavkaObresti" minOccurs="1" maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="LetoBremenitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="StevilkaRacuna" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumOD" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumDO" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="Znesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="SteviloZamujenihDni" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="OdstotekObresti" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ZnesekObresti" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="BioMasa" minOccurs="0" maxOccurs="1">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                          <xsd:element name="OpisStoritve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="Obrok" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="BrutoZnesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Storitve" minOccurs="0" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                          <xsd:element name="NazivStoritve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="OpisStoritve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="Obdobje" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="NetoZnesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="DDV" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="BrutoZnesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Akontacije" minOccurs="0" maxOccurs="1">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                          <xsd:element name="MerilnoMesto" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+                                <xsd:element name="tipMerilnegaMesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ObdobjeDobave" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SMM" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NacinMerjenja" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NacinObracuna" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ObracunskaMoc" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Varovalke" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="VrstaDobave" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="StevilkaPogodbe" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NazivMerilnegaMesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SODO" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SODO_MM" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="OdjemnaSkupina" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="VrstaTipPlinomera" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PodatekStevcnostanje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="SkupajZnesekIzstavljeno" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="SkupajZnesekPrejeto" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="Preplacilo" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="Dolg" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                          <xsd:element name="PostavkeAkontacije" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PostavkaAkontacije" minOccurs="1" maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="StevilkaRacuna" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="VrstaRacuna" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumIzstavitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumZapadlosti" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ZnesekIzstavljeno" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="NacinPlacila" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumPlacila" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ZnesekPrejeto" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="ElektrikaAkontacija" minOccurs="0" maxOccurs="1">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                          <xsd:element name="MerilnoMesto" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+                                <xsd:element name="tipMerilnegaMesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ObdobjeDobave" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SMM" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NacinMerjenja" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NacinObracuna" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ObracunskaMoc" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Varovalke" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="VrstaDobave" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="StevilkaPogodbe" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NazivMerilnegaMesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SODO" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SODO_MM" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="OdjemnaSkupina" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="VrstaTipPlinomera" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PodatekStevcnostanje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="Poraba" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PorabaSkupaj" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PovprecnaDnevnaPoraba" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PovprecnaDnevnaPorabaSLO" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="KoncnoStanjeVT" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ZacetnoStanjeVT" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PorabaVT" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="KoncnoStanjeMT" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ZacetnoStanjeMT" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PorabaMT" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="KoncnoStanjeET" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ZacetnoStanjeET" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PorabaET" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PovprecnaDnevnaPorabaET" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PovprecnaDnevnaPorabaVT" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PovprecnaDnevnaPorabaMT" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SteviloDniET" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SteviloDniVT" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SteviloDniMT" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DatumOd" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DatumDo" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PrejetaPlacila" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="IzstavljeniRacuni" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Dolg" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Preplacilo" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="Postavke" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="SkupajZnesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Omreznina" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="Znesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ProcentDelitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="PostavkeSeznam" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Postavke" minOccurs="0" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                              <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                          <xsd:element name="Noga" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                      <xsd:element name="DodatniTekst" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Energent" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="Znesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ProcentDelitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="PostavkeSeznam" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Postavke" minOccurs="0" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                              <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                          <xsd:element name="Noga" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                      <xsd:element name="DodatniTekst" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Dajatve" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="Znesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ProcentDelitve" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="PostavkeSeznam" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Postavke" minOccurs="0" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                              <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                          <xsd:element name="Noga" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                <xsd:element name="Col1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                                <xsd:element name="Col3" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                              </xsd:sequence>
+                                            </xsd:complexType>
+                                          </xsd:element>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                      <xsd:element name="DodatniTekst" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="GrafPreteklePorabe" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PL" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="VT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="MT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="ET" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Skupaj" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="0" maxOccurs="unbounded">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="DodatniTekst" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="GrafTrenutnePorabe" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="PL" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="VT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="MT" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="ET" minOccurs="0" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="Skupaj" minOccurs="1" maxOccurs="1">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="GrafElement" minOccurs="1" maxOccurs="1">
+                                      <xsd:complexType>
+                                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                                          <xsd:element name="Leto" minOccurs="1" maxOccurs="1" type="xsd:int"/>
+                                          <xsd:element name="Mesec" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                          <xsd:element name="Vrednost" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                        </xsd:sequence>
+                                      </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="LetniObracunRek" minOccurs="0" maxOccurs="1">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                          <xsd:element name="MerilnoMesto" minOccurs="0" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+                                <xsd:element name="tipMerilnegaMesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ObdobjeDobave" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SMM" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NacinMerjenja" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NacinObracuna" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ObracunskaMoc" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="Varovalke" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="VrstaDobave" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="StevilkaPogodbe" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="NazivMerilnegaMesta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SODO" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="SODO_MM" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="OdjemnaSkupina" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="VrstaTipPlinomera" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="PodatekStevcnostanje" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="Rekapitulacije" minOccurs="1" maxOccurs="1">
+                            <xsd:complexType>
+                              <xsd:sequence minOccurs="1" maxOccurs="1">
+                                <xsd:element name="SteviloDni" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ZnesekNeto" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ZnesekDDV" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="DDV_proc" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="ZnesekBruto" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                <xsd:element name="RekapitulacijaPoz" minOccurs="1" maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                      <xsd:element name="Oznaka_Energenta" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="NazivElementa" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumOd" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="DatumDo" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="SteviloDni" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="ZacetnoStanje" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="KoncnoStanje" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="Kolicina" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="MerskaEnota" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="Cena" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="Znesek" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="Razlika_odbirki" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                      <xsd:element name="Konstanta" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+                                    </xsd:sequence>
+									<xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="RacunReklama" minOccurs="0" maxOccurs="1">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="1">
+                          <xsd:element name="ImePriloge" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="zaporednaStevilka" type="xsd:int"/>
+                  <xsd:attribute name="vrstaEnergenta" type="xsd:string"/>
+                  <xsd:attribute name="vrstaSklopa" type="xsd:string" use="required"/>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="DodatniTeksti" minOccurs="0" maxOccurs="1">
+                <xsd:complexType>
+                  <xsd:sequence minOccurs="1" maxOccurs="1">
+                    <xsd:element name="DodatniTekst1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="DodatniTekst2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="Noga1" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="Noga2" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="UPN" minOccurs="0" maxOccurs="1">
+                <xsd:complexType>
+                  <xsd:sequence minOccurs="1" maxOccurs="1">
+                    <xsd:element name="NacinPlacila" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="ImePlacnikaUpn" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="NamenPlacilaUpn" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="ZnesekPlacila" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="IBANPrejemnik" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="BICBankaPrejemnik" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="ReferencaPrejemnikaUpn" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="ReferencaKodaPrejemnikaUpn" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="ImePrejemnikaUpn" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="KodaNamenaPlacnik" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="DatumPlacilaPrejemnik" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="IzjavaPrejemnik" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="NujnoPlacnik" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="OCRUpn" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="DokumentPriloge" minOccurs="0" maxOccurs="1">
+                <xsd:complexType>
+                  <xsd:sequence minOccurs="1" maxOccurs="1">
+                    <xsd:element name="ImePriloge" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="DokumentPriloge" minOccurs="0" maxOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence minOccurs="1" maxOccurs="1">
+              <xsd:element name="Priloga" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence minOccurs="1" maxOccurs="1">
+                    <xsd:element name="ImePriloge" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    <xsd:element name="VsebinaPriloge" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <xs:element name="PaketTiskar">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="vrsta_dokumenta" type="xs:string"></xs:element>
+                           <xs:element name="st_dokumentov" type="xs:int"></xs:element>
+                           <xs:element name="st_strani" type="xs:int"></xs:element>
+                           <xs:element name="glava_dokumenta"></xs:element>
+                           <xs:element name="noga_dokumenta" type="xs:string"></xs:element>
+                           <xs:element name="DokumentTiskar" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                       <xs:sequence>
+											<xs:element name="e_racun" type="xs:int" minOccurs="1" maxOccurs="1"></xs:element>
+                                             <xs:element name="Naslovnik">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="stanovanje_naslovnik"></xs:element>
+                                                               <xs:element name="naziv_naslovnik" type="xs:string"></xs:element>
+                                                               <xs:element name="naslov_naslovnik" type="xs:string"></xs:element>
+                                                               <xs:element name="posta_naslovnik" type="xs:string"></xs:element>
+                                                               <xs:element name="drzava_naslovnik"></xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="Glava_zbirnik">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="st_zbirnika" type="xs:string"></xs:element>
+                                                               <xs:element name="kraj_izdaje" type="xs:string"></xs:element>
+                                                               <xs:element name="datum_izdaje" type="xs:string"></xs:element>
+                                                               <xs:element name="datum_zapadlosti" type="xs:string"></xs:element>
+                                                               <xs:element name="sklic" type="xs:string"></xs:element>
+                                                               <xs:element name="iban" type="xs:string"></xs:element>
+                                                               <xs:element name="st_kupec" type="xs:string"></xs:element>
+                                                               <xs:element name="st_pogodbe" type="xs:string"></xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="Glava_pozicije">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="naziv_zbirnika" type="xs:string"></xs:element>
+                                                               <xs:element name="naziv_zbirnika_podatki">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="leto" type="xs:string"></xs:element>
+                                                                                 <xs:element name="mesec" type="xs:string"></xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="Kupec">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="naziv_kupca" type="xs:string"></xs:element>
+                                                                                 <xs:element name="naslov_kupca" type="xs:string"></xs:element>
+                                                                                 <xs:element name="posta_kupca" type="xs:string"></xs:element>
+                                                                                 <xs:element name="id_ddv_kupca" type="xs:string"></xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="Tekst_pred_pozicijami">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="Tekst_pozicija">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="tekst"></xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="ZapSt" type="xs:int"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="Pozicije_racuni">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="st_vseh_racunov" type="xs:string"></xs:element>
+                                                               <xs:element name="skupaj_za_placilo" type="xs:string"></xs:element>
+                                                               <xs:element name="Pozicija" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="stevilka_racuna" type="xs:string"></xs:element>
+                                                                                 <xs:element name="stevilka_mm" type="xs:string"></xs:element>
+                                                                                 <xs:element name="naslov_mm" type="xs:string"></xs:element>
+                                                                                 <xs:element name="znesek_racuna" type="xs:string"></xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="ZapSt" type="xs:int"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="Pozicije_produkti_storitve">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="Pozicija_glava" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="Naziv_glava" type="xs:string"></xs:element>
+                                                                                 <xs:element name="Pozicija" maxOccurs="unbounded">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="Naziv" type="xs:string"></xs:element>
+                                                                                                   <xs:element name="Kolicina" type="xs:string"></xs:element>
+                                                                                                   <xs:element name="Enota_mere" type="xs:string"></xs:element>
+                                                                                             </xs:sequence>
+                                                                                             <xs:attribute name="ZapSt" type="xs:int"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="ZapSt" type="xs:int"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="Postavke_ddv">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="skupaj_placilo" type="xs:string"></xs:element>
+                                                               <xs:element name="valuta" type="xs:string"></xs:element>
+                                                               <xs:element name="Postavka">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="Osnova" type="xs:string"></xs:element>
+                                                                                 <xs:element name="davcna_stopnja" type="xs:string"></xs:element>
+                                                                                 <xs:element name="znesek_ddv" type="xs:string"></xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="ZapSt" type="xs:int"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="Tekst_za_pozicijami">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="Tekst_pozicija" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="tekst" type="xs:string"></xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="ZapSt" type="xs:int"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+									   <xs:attribute name="id" type="xs:int"></xs:attribute>
+									   <xs:attribute name="KRO_Id" type="xs:string" use="optional"></xs:attribute>
+									   <xs:attribute name="Vsota_vsi" type="xs:string" use="optional"></xs:attribute>
+									   <xs:attribute name="Dostop" type="xs:string" use="optional"></xs:attribute>
+									   <xs:attribute name="Vsota_DO" type="xs:string" use="optional"></xs:attribute>
+									   <xs:attribute name="DPosta" type="xs:string" use="optional"></xs:attribute>
+									   <xs:attribute name="Num_DO" type="xs:string" use="optional"></xs:attribute>
+									   <xs:attribute name="prelom" type="xs:string" use="optional"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                     </xs:sequence>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>

@@ -1,0 +1,462 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	 <xs:element name="PaketTiskarVPO">
+		   <xs:complexType>
+				 <xs:sequence>
+					   <xs:element name="stevilo_dokumentov" type="xs:int"></xs:element>
+					   <xs:element name="DokumentTiskarVPO" maxOccurs="unbounded">
+							 <xs:complexType>
+								   <xs:sequence>
+										 <xs:element name="ZapSt" type="xs:int"></xs:element>
+										 <xs:element name="Verzija" type="xs:string"></xs:element>
+										 <xs:element name="TipDokumenta" type="xs:string"></xs:element>
+										 <xs:element name="e_racun" type="xs:int"></xs:element>
+										 <xs:element name="PogodbaVPO" type="xs:int"></xs:element>
+										 <xs:element name="DokumentGlavaTekst" type="xs:string"></xs:element>
+										 <xs:element name="DokumentNogaTekst" type="xs:string"></xs:element>
+										 <xs:element name="PrikazObnovljiviViri" type="xs:int"></xs:element>
+										 <xs:element name="Prejemnik">
+											   <xs:complexType>
+													 <xs:sequence>
+														   <xs:element name="Naziv" type="xs:string"></xs:element>
+														   <xs:element name="Naslov" type="xs:string"></xs:element>
+														   <xs:element name="Posta" type="xs:string"></xs:element>
+													 </xs:sequence>
+											   </xs:complexType>
+										 </xs:element>
+										 <xs:element name="GlavaRacuna">
+											   <xs:complexType>
+													 <xs:sequence>
+														   <xs:element name="Kraj" type="xs:string"></xs:element>
+														   <xs:element name="Datum" type="xs:string"></xs:element>
+														   <xs:element name="StevilkaRacuna" type="xs:string"></xs:element>
+														   <xs:element name="ObracunskoObdobje" type="xs:string"></xs:element>
+														   <xs:element name="StevilkaKupca" type="xs:string"></xs:element>
+														   <xs:element name="DavcnaStevilka" type="xs:string"></xs:element>
+														   <xs:element name="Naziv" type="xs:string"></xs:element>
+														   <xs:element name="Naslov" type="xs:string"></xs:element>
+														   <xs:element name="Posta" type="xs:string"></xs:element>
+														   <xs:element name="RokPlacila" type="xs:string"></xs:element>
+														   <xs:element name="ZnesekRacun" type="xs:string"></xs:element>
+														   <xs:element name="ZnesekPlacilo" type="xs:string"></xs:element>
+														   <xs:element name="NazivRacuna" type="xs:string"></xs:element>
+														   <xs:element name="BarKoda" type="xs:string"></xs:element>
+														   <xs:element name="Sklic" type="xs:string"></xs:element>
+														   <xs:element name="TRR" type="xs:string"></xs:element>
+														   <xs:element name="BIC_Banka" type="xs:string"></xs:element>
+														   <xs:element name="PostavkeDDV">
+																 <xs:complexType>
+																	   <xs:sequence>
+																			 <xs:element name="PostavkaDDV">
+																				   <xs:complexType>
+																						 <xs:sequence>
+																							   <xs:element name="StopnjaDDV" type="xs:string"></xs:element>
+																							   <xs:element name="ZnesekOsnova" type="xs:string"></xs:element>
+																							   <xs:element name="ZnesekDDV" type="xs:string"></xs:element>
+																							   <xs:element name="ZnesekSkupaj" type="xs:string"></xs:element>
+																						 </xs:sequence>
+																						 <xs:attribute name="zaporednaStevilka" type="xs:int"></xs:attribute>
+																				   </xs:complexType>
+																			 </xs:element>
+																	   </xs:sequence>
+																 </xs:complexType>
+														   </xs:element>
+													 </xs:sequence>
+											   </xs:complexType>
+										 </xs:element>
+										 <xs:element name="SklopDokumenta" minOccurs="1" maxOccurs="unbounded">
+											   <xs:complexType>
+													 <xs:sequence>
+													   <xs:element name="ElektrikaAkontacija" minOccurs="0">
+															 <xs:complexType>
+																   <xs:sequence>
+																		<xs:element name="TekstPredPoz" type="xs:string"></xs:element>
+																		<xs:element name="TekstZaPoz" type="xs:string"></xs:element>
+																		 <xs:element name="MerilnoMesto">
+																			   <xs:complexType>
+																					 <xs:sequence>
+																						   <xs:element name="tipMerilnegaMesta" type="xs:string"></xs:element>
+																						   <xs:element name="ObdobjeDobave" type="xs:string"></xs:element>
+																						   <xs:element name="SMM" type="xs:string"></xs:element>
+																						   <xs:element name="NacinMerjenja" type="xs:string"></xs:element>
+																						   <xs:element name="NacinObracuna" type="xs:string"></xs:element>
+																						   <xs:element name="ObracunskaMoc" type="xs:string"></xs:element>
+																						   <xs:element name="Varovalke" type="xs:string"></xs:element>
+																						   <xs:element name="VrstaDobave" type="xs:string"></xs:element>
+																						   <xs:element name="StevilkaPogodbe" type="xs:string"></xs:element>
+																						   <xs:element name="NazivMerilnegaMesta" type="xs:string"></xs:element>
+																						   <xs:element name="SODO" type="xs:string"></xs:element>
+																						   <xs:element name="SODO_MM" type="xs:string"></xs:element>
+																						   <xs:element name="OdjemnaSkupina"></xs:element>
+																						   <xs:element name="VrstaTipPlinomera"></xs:element>
+																						   <xs:element name="PodatekStevcnostanje" type="xs:string"></xs:element>
+																					 </xs:sequence>
+																			   </xs:complexType>
+																		 </xs:element>
+																		 <xs:element name="Poraba">
+																			   <xs:complexType>
+																					 <xs:sequence>
+																						   <xs:element name="PorabaPostavke">
+																								 <xs:complexType>
+																									   <xs:sequence>
+																											 <xs:element name="Postavka" maxOccurs="unbounded">
+																												   <xs:complexType>
+																														 <xs:sequence>
+																															   <xs:element name="NazivElementa" type="xs:string"></xs:element>
+																															   <xs:element name="DatumOd" type="xs:string"></xs:element>
+																															   <xs:element name="DatumDo" type="xs:string"></xs:element>
+																															   <xs:element name="SteviloDni" type="xs:string"></xs:element>
+																															   <xs:element name="ZacetnoStanje" type="xs:string"></xs:element>
+																															   <xs:element name="KoncnoStanje" type="xs:string"></xs:element>
+																															   <xs:element name="Razlika_odbirki" type="xs:string"></xs:element>
+																															   <xs:element name="Konstanta" type="xs:string"></xs:element>
+																															   <xs:element name="Kolicina" type="xs:string"></xs:element>
+																															   <xs:element name="MerskaEnota" type="xs:string"></xs:element>
+																															   <xs:element name="Cena" type="xs:string"></xs:element>
+																															   <xs:element name="Znesek" type="xs:string"></xs:element>
+																															   <xs:element name="OznakaEnergenta" type="xs:string"></xs:element>
+																														 </xs:sequence>
+																														 <xs:attribute name="zaporednaStevilka" type="xs:int"></xs:attribute>
+																												   </xs:complexType>
+																											 </xs:element>
+																									   </xs:sequence>
+																								 </xs:complexType>
+																						   </xs:element>
+																						   <xs:element name="PorabaPostavkeSum">
+																								 <xs:complexType>
+																									   <xs:sequence>
+																											 <xs:element name="SteviloDniSum" type="xs:string"></xs:element>
+																											 <xs:element name="KolicinaSum" type="xs:string"></xs:element>
+																											 <xs:element name="ZnesekSum" type="xs:string"></xs:element>
+																											 <xs:element name="Povpr_dnevna_poraba" type="xs:string"></xs:element>
+																									   </xs:sequence>
+																								 </xs:complexType>
+																						   </xs:element>
+																					 </xs:sequence>
+																			   </xs:complexType>
+																		 </xs:element>
+																   </xs:sequence>
+															 </xs:complexType>
+													   </xs:element>
+													   <xs:element name="Elektrika" minOccurs="0">
+															 <xs:complexType>
+																   <xs:sequence>
+																		<xs:element name="TekstPredPoz" type="xs:string"></xs:element>
+																		<xs:element name="TekstZaPoz" type="xs:string"></xs:element>
+																		 <xs:element name="MerilnoMesto">
+																			   <xs:complexType>
+																					 <xs:sequence>
+																						   <xs:element name="tipMerilnegaMesta" type="xs:string"></xs:element>
+																						   <xs:element name="ObdobjeDobave" type="xs:string"></xs:element>
+																						   <xs:element name="SMM" type="xs:string"></xs:element>
+																						   <xs:element name="NacinMerjenja" type="xs:string"></xs:element>
+																						   <xs:element name="NacinObracuna" type="xs:string"></xs:element>
+																						   <xs:element name="ObracunskaMoc" type="xs:string"></xs:element>
+																						   <xs:element name="Varovalke" type="xs:string"></xs:element>
+																						   <xs:element name="VrstaDobave" type="xs:string"></xs:element>
+																						   <xs:element name="StevilkaPogodbe" type="xs:string"></xs:element>
+																						   <xs:element name="NazivMerilnegaMesta" type="xs:string"></xs:element>
+																						   <xs:element name="SODO" type="xs:string"></xs:element>
+																						   <xs:element name="SODO_MM" type="xs:string"></xs:element>
+																						   <xs:element name="OdjemnaSkupina"></xs:element>
+																						   <xs:element name="VrstaTipPlinomera"></xs:element>
+																						   <xs:element name="PodatekStevcnostanje" type="xs:string"></xs:element>
+																					 </xs:sequence>
+																			   </xs:complexType>
+																		 </xs:element>
+																		 <xs:element name="Poraba">
+																			   <xs:complexType>
+																					 <xs:sequence>
+																						   <xs:element name="PorabaPostavke">
+																								 <xs:complexType>
+																									   <xs:sequence>
+																											 <xs:element name="Postavka" maxOccurs="unbounded">
+																												   <xs:complexType>
+																														 <xs:sequence>
+																															   <xs:element name="NazivElementa" type="xs:string"></xs:element>
+																															   <xs:element name="DatumOd" type="xs:string"></xs:element>
+																															   <xs:element name="DatumDo" type="xs:string"></xs:element>
+																															   <xs:element name="SteviloDni" type="xs:string"></xs:element>
+																															   <xs:element name="ZacetnoStanje" type="xs:string"></xs:element>
+																															   <xs:element name="KoncnoStanje" type="xs:string"></xs:element>
+																															   <xs:element name="Razlika_odbirki" type="xs:string"></xs:element>
+																															   <xs:element name="Konstanta"></xs:element>
+																															   <xs:element name="Kolicina" type="xs:string"></xs:element>
+																															   <xs:element name="MerskaEnota" type="xs:string"></xs:element>
+																															   <xs:element name="Cena" type="xs:string"></xs:element>
+																															   <xs:element name="Znesek" type="xs:string"></xs:element>
+																															   <xs:element name="OznakaEnergenta" type="xs:string"></xs:element>
+																														 </xs:sequence>
+																														 <xs:attribute name="zaporednaStevilka" type="xs:int"></xs:attribute>
+																												   </xs:complexType>
+																											 </xs:element>
+																									   </xs:sequence>
+																								 </xs:complexType>
+																						   </xs:element>
+																						   <xs:element name="PorabaPostavkeSum">
+																								 <xs:complexType>
+																									   <xs:sequence>
+																											 <xs:element name="SteviloDniSum" type="xs:string"></xs:element>
+																											 <xs:element name="KolicinaSum" type="xs:string"></xs:element>
+																											 <xs:element name="ZnesekSum" type="xs:string"></xs:element>
+																											 <xs:element name="Povpr_dnevna_poraba" type="xs:string"></xs:element>
+																											 
+																											 <xs:element name="Obracun_na_osnovi_porabe" type="xs:string" minOccurs="0" maxOccurs="1"></xs:element>
+																											 <xs:element name="Izstavljeni_racuni" type="xs:string" minOccurs="0" maxOccurs="1"></xs:element>
+																											 <xs:element name="Premalo_zaracunano" type="xs:string" minOccurs="0" maxOccurs="1"></xs:element>
+																											 <xs:element name="Prevec_zaracunano" type="xs:string" minOccurs="0" maxOccurs="1"></xs:element>																											 
+																									   </xs:sequence>
+																								 </xs:complexType>
+																						   </xs:element>
+																					 </xs:sequence>
+																			   </xs:complexType>
+																		 </xs:element>
+																   </xs:sequence>
+															 </xs:complexType>
+													   </xs:element>
+													   <xs:element name="Akontacije" minOccurs="0">
+															 <xs:complexType>
+																   <xs:sequence>
+																		 <xs:element name="TekstPredPoz" type="xs:string"></xs:element>
+																		 <xs:element name="TekstZaPoz"></xs:element>
+																		 <xs:element name="SkupajZnesekIzstavljeno" type="xs:string"></xs:element>
+																		 <xs:element name="SkupajZnesekPrejeto" type="xs:string"></xs:element>
+																		 <xs:element name="Preplacilo" type="xs:string"></xs:element>
+																		 <xs:element name="Dolg" type="xs:string"></xs:element>
+																		 <xs:element name="PostavkeAkontacije">
+																			   <xs:complexType>
+																					 <xs:sequence>
+																						   <xs:element name="PostavkaAkontacije" maxOccurs="unbounded">
+																								 <xs:complexType>
+																									   <xs:sequence>
+																											 <xs:element name="StevilkaRacuna" type="xs:string"></xs:element>
+																											 <xs:element name="VrstaRacuna" type="xs:string"></xs:element>
+																											 <xs:element name="DatumIzstavitve" type="xs:string"></xs:element>
+																											 <xs:element name="DatumZapadlosti" type="xs:string"></xs:element>
+																											 <xs:element name="ZnesekIzstavljeno" type="xs:string"></xs:element>
+																											 <xs:element name="NacinPlacila"></xs:element>
+																											 <xs:element name="DatumPlacila"></xs:element>
+																											 <xs:element name="ZnesekPrejeto"></xs:element>
+																									   </xs:sequence>
+																									   <xs:attribute name="zaporednaStevilka" type="xs:int"></xs:attribute>
+																								 </xs:complexType>
+																						   </xs:element>
+																					 </xs:sequence>
+																			   </xs:complexType>
+																		 </xs:element>
+																   </xs:sequence>
+															 </xs:complexType>
+													   </xs:element>
+													   <xs:element name="Plin" minOccurs="0">
+																 <xs:complexType>
+																	   <xs:sequence>
+																			 <xs:element name="IzstavitevRacun">
+																				   <xs:complexType>
+																						 <xs:sequence>
+																							   <xs:element name="DodatniTekst1" type="xs:string"></xs:element>
+																							   <xs:element name="DodatniTekst2" type="xs:string"></xs:element>
+																							   <xs:element name="DodatniTekst3" type="xs:string"></xs:element>
+																							   <xs:element name="DodatniTekst4" type="xs:string"></xs:element>
+																							   <xs:element name="DodatniTekst5" type="xs:string"></xs:element>
+																							   <xs:element name="DodatniTekst6" type="xs:string"></xs:element>
+																							   <xs:element name="DodatniTekst7" type="xs:string"></xs:element>
+																							   <xs:element name="DodatniTekst8" type="xs:string"></xs:element>
+																						 </xs:sequence>
+																				   </xs:complexType>
+																			 </xs:element>
+																			 <xs:element name="MerilnoMesto">
+																				   <xs:complexType>
+																						 <xs:sequence>
+																							   <xs:element name="tipMerilnegaMesta" type="xs:string"></xs:element>
+																							   <xs:element name="ObdobjeDobave" type="xs:string"></xs:element>
+																							   <xs:element name="SMM" type="xs:string"></xs:element>
+																							   <xs:element name="NacinMerjenja" type="xs:string"></xs:element>
+																							   <xs:element name="NacinObracuna" type="xs:string"></xs:element>
+																							   <xs:element name="ObracunskaMoc" type="xs:string"></xs:element>
+																							   <xs:element name="Varovalke" type="xs:string"></xs:element>
+																							   <xs:element name="VrstaDobave" type="xs:string"></xs:element>
+																							   <xs:element name="StevilkaPogodbe" type="xs:string"></xs:element>
+																							   <xs:element name="NazivMerilnegaMesta" type="xs:string"></xs:element>
+																							   <xs:element name="SODO" type="xs:string"></xs:element>
+																							   <xs:element name="SODO_MM" type="xs:string"></xs:element>
+																							   <xs:element name="OdjemnaSkupina" type="xs:string"></xs:element>
+																							   <xs:element name="VrstaTipPlinomera" type="xs:string"></xs:element>
+																							   <xs:element name="PodatekStevcnostanje" type="xs:string"></xs:element>
+																						 </xs:sequence>
+																				   </xs:complexType>
+																			 </xs:element>
+																			 <xs:element name="Poraba">
+																				   <xs:complexType>
+																						 <xs:sequence>
+																							   <xs:element name="PorabaPostavke">
+																									 <xs:complexType>
+																										   <xs:sequence>
+																												 <xs:element name="Postavka" maxOccurs="unbounded">
+																													   <xs:complexType>
+																															 <xs:sequence>
+																																   <xs:element name="NazivElementa" type="xs:string"></xs:element>
+																																   <xs:element name="DatumOd" type="xs:string"></xs:element>
+																																   <xs:element name="DatumDo" type="xs:string"></xs:element>
+																																   <xs:element name="SteviloDni" type="xs:string"></xs:element>
+																																   <xs:element name="ZacetnoStanje" type="xs:string"></xs:element>
+																																   <xs:element name="KoncnoStanje" type="xs:string"></xs:element>
+																																   <xs:element name="Kolicina" type="xs:string"></xs:element>
+																																   <xs:element name="MerskaEnota" type="xs:string"></xs:element>
+																																   <xs:element name="Cena" type="xs:string"></xs:element>
+																																   <xs:element name="Znesek" type="xs:string"></xs:element>
+																																   <xs:element name="OznakaEnergenta" type="xs:string"></xs:element>
+																															 </xs:sequence>
+																															 <xs:attribute name="zaporednaStevilka" type="xs:int"></xs:attribute>
+																													   </xs:complexType>
+																												 </xs:element>
+																										   </xs:sequence>
+																									 </xs:complexType>
+																							   </xs:element>
+																							   <xs:element name="PorabaPostavkeSum">
+																									 <xs:complexType>
+																										   <xs:sequence>
+																												 <xs:element name="SteviloDniSum" type="xs:string"></xs:element>
+																												 <xs:element name="KolicinaSum" type="xs:string"></xs:element>
+																												 <xs:element name="ZnesekSum" type="xs:string"></xs:element>
+																										   </xs:sequence>
+																									 </xs:complexType>
+																							   </xs:element>
+																						 </xs:sequence>
+																				   </xs:complexType>
+																			 </xs:element>
+																	   </xs:sequence>
+																 </xs:complexType>
+														   </xs:element>
+														<xs:element name="ZamudneObresti" minOccurs="0">
+																 <xs:complexType>
+																	   <xs:sequence>
+																			 <xs:element name="ZnesekObrestiSkupaj" type="xs:string"></xs:element>
+																			 <xs:element name="DodatniTeksti">
+																				   <xs:complexType>
+																						 <xs:sequence>
+																							   <xs:element name="DodatniTekst1" type="xs:string"></xs:element>
+																							   <xs:element name="DodatniTekst2"></xs:element>
+																						 </xs:sequence>
+																				   </xs:complexType>
+																			 </xs:element>
+																			 <xs:element name="PostavkeObresti">
+																				   <xs:complexType>
+																						 <xs:sequence>
+																							   <xs:element name="PostavkaObresti" maxOccurs="unbounded">
+																									 <xs:complexType>
+																										   <xs:sequence>
+																												 <xs:element name="LetoBremenitve" type="xs:string"></xs:element>
+																												 <xs:element name="StevilkaRacuna" type="xs:string"></xs:element>
+																												 <xs:element name="DatumOD" type="xs:string"></xs:element>
+																												 <xs:element name="DatumDO" type="xs:string"></xs:element>
+																												 <xs:element name="SteviloZamujenihDni" type="xs:string"></xs:element>
+																												 <xs:element name="LetoPlacila" type="xs:string"></xs:element>
+																												 <xs:element name="StevilkaPlacila" type="xs:string"></xs:element>
+																												 <xs:element name="Znesek" type="xs:string"></xs:element>
+																												 <xs:element name="OdstotekObresti" type="xs:string"></xs:element>
+																												 <xs:element name="ZnesekObresti" type="xs:string"></xs:element>
+																										   </xs:sequence>
+																										   <xs:attribute name="zaporednaStevilka" type="xs:int"></xs:attribute>
+																									 </xs:complexType>
+																							   </xs:element>
+																						 </xs:sequence>
+																				   </xs:complexType>
+																			 </xs:element>
+																	   </xs:sequence>
+																 </xs:complexType>
+														   </xs:element>
+														<xs:element name="Opomin" minOccurs="0">
+																 <xs:complexType>
+																	   <xs:sequence>
+																			 <xs:element name="StevilkaOpomina" type="xs:string"></xs:element>
+																			 <xs:element name="SkupajZnesekIzstavljeno" type="xs:string"></xs:element>
+																			 <xs:element name="SkupajZnesekPrejeto" type="xs:string"></xs:element>
+																			 <xs:element name="Dolg" type="xs:string"></xs:element>
+																			 <xs:element name="StrosekOpomina" type="xs:string"></xs:element>
+																			 <xs:element name="DodatniTeksti">
+																				   <xs:complexType>
+																						 <xs:sequence>
+																							   <xs:element name="DodatniTekst1" type="xs:string"></xs:element>
+																							   <xs:element name="DodatniTekst2" type="xs:string"></xs:element>
+																							   <xs:element name="DodatniTekst3" type="xs:string"></xs:element>
+																						 </xs:sequence>
+																				   </xs:complexType>
+																			 </xs:element>
+																			 <xs:element name="PostavkeOpomina">
+																				   <xs:complexType>
+																						 <xs:sequence>
+																							   <xs:element name="PostavkaOpomina" maxOccurs="unbounded">
+																									 <xs:complexType>
+																										   <xs:sequence>
+																												 <xs:element name="LetoBremenitve" type="xs:string"></xs:element>
+																												 <xs:element name="StevilkaRacuna" type="xs:string"></xs:element>
+																												 <xs:element name="VrstaBremenitve" type="xs:string"></xs:element>
+																												 <xs:element name="DatumOd" type="xs:string"></xs:element>
+																												 <xs:element name="DatumDo" type="xs:string"></xs:element>
+																												 <xs:element name="ZnesekIzstavljeno" type="xs:string"></xs:element>
+																												 <xs:element name="DatumPlacila" type="xs:string"></xs:element>
+																												 <xs:element name="NacinPlacila" type="xs:string"></xs:element>
+																												 <xs:element name="ZnesekPrejeto" type="xs:string"></xs:element>
+																										   </xs:sequence>
+																										   <xs:attribute name="zaporednaStevilka" type="xs:int"></xs:attribute>
+																									 </xs:complexType>
+																							   </xs:element>
+																						 </xs:sequence>
+																				   </xs:complexType>
+																			 </xs:element>
+																	   </xs:sequence>
+																 </xs:complexType>
+														   </xs:element>
+														<xs:element name="Storitve" minOccurs="0">
+															 <xs:complexType>
+																   <xs:sequence>
+																		 <xs:element name="StoritevPoz">
+																			   <xs:complexType>
+																					 <xs:sequence>
+																						   <xs:element name="NazivStoritve" type="xs:string"></xs:element>
+																						   <xs:element name="OpisStoritve" type="xs:string"></xs:element>
+																						   <xs:element name="Obdobje" type="xs:string"></xs:element>
+																						   <xs:element name="Kolicina" type="xs:string"></xs:element>
+																						   <xs:element name="NetoZnesek" type="xs:string"></xs:element>
+																						   <xs:element name="DDV" type="xs:string"></xs:element>
+																						   <xs:element name="BrutoZnesek" type="xs:string"></xs:element>
+																					 </xs:sequence>
+																					 <xs:attribute name="zaporednaStevilka" type="xs:int"></xs:attribute>
+																			   </xs:complexType>
+																		 </xs:element>
+																   </xs:sequence>
+															 </xs:complexType>
+													   </xs:element>
+													 </xs:sequence>
+													 <xs:attribute name="zaporednaStevilka" type="xs:int"></xs:attribute>
+													 <xs:attribute name="vrstaEnergenta" type="xs:string"></xs:attribute>
+													 <xs:attribute name="vrstaSklopa" type="xs:string"></xs:attribute>
+											   </xs:complexType>
+										 </xs:element>
+										 <xs:element name="UPN" minOccurs="0" maxOccurs="1">
+											   <xs:complexType>
+													 <xs:sequence>
+														   <xs:element name="TekstNadUPN" type="xs:string"></xs:element>
+														   <xs:element name="NacinPlacila" type="xs:int"></xs:element>
+														   <xs:element name="ImePlacnikaUpn" type="xs:string"></xs:element>
+														   <xs:element name="NamenPlacilaUpn" type="xs:string"></xs:element>
+														   <xs:element name="ZnesekPlacila" type="xs:string"></xs:element>
+														   <xs:element name="IBANPrejemnik" type="xs:string"></xs:element>
+														   <xs:element name="BICBankaPrejemnik" type="xs:string"></xs:element>
+														   <xs:element name="ReferencaPrejemnikaUpn" type="xs:string"></xs:element>
+														   <xs:element name="ReferencaKodaPrejemnikaUpn" type="xs:string"></xs:element>
+														   <xs:element name="ImePrejemnikaUpn" type="xs:string"></xs:element>
+														   <xs:element name="KodaNamenaPlacnik" type="xs:string"></xs:element>
+														   <xs:element name="DatumPlacilaPrejemnik" type="xs:string"></xs:element>
+														   <xs:element name="IzjavaPrejemnik" type="xs:int"></xs:element>
+														   <xs:element name="NujnoPlacnik" type="xs:int"></xs:element>
+														   <xs:element name="OCRUpn" type="xs:string"></xs:element>
+													 </xs:sequence>
+											   </xs:complexType>
+										 </xs:element>
+								   </xs:sequence>
+							 </xs:complexType>
+					   </xs:element>
+				 </xs:sequence>
+		   </xs:complexType>
+	 </xs:element>
+</xs:schema>
