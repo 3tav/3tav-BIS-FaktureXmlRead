@@ -52,12 +52,12 @@ namespace XmlExport
             // zapis v datoteko                
             foreach (var format in formats)
             {
-                if (format == "xml")
+                if (format == _formatXML)
                 {
                     WriteToFile(FilePath, xml);
                 }
 
-                if (format == "html")
+                if (format == _formatHTML)
                 {
                     var xslt = File.ReadAllText("C:\\temp\\rek\\REK_O_1.1-display-sl.xslt");
                     var htmlObrazec = TransformXMLToHTML(xml, xslt);
