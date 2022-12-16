@@ -85,6 +85,8 @@ namespace XmlExport
                 case "EGP_fin_kreirajObrestiTiskarXML":
                 case "ECE_fin_kreirajObrestiTiskarXML":
                     return new EGPObrestiTiskar();
+                case "REK_IzvozXML":
+                    return new REKIzvozXML();
                 default: 
                     throw new Exception(string.Format("Izvoz {0} ni implementiran!", exportId));
             }            

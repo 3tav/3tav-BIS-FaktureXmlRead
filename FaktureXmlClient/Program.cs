@@ -46,7 +46,7 @@ namespace XmlExportClient
              //   MessageBox.Show("Napačno število argumentov za program!");
               //  return;                
 
-                string podjetje = "ECE";
+                string podjetje = "KKR";
 
                 switch (podjetje)
                 { 
@@ -58,6 +58,15 @@ namespace XmlExportClient
                         exportId = "EGP_bis_kreirajRacunTiskarXML";
                         exportArgs = "2015-02-05 10:59:59.670;null";                        
                         xmlPath = "c:\\temp\\epps\\test_egp.xml";
+                        break;
+                    case "KKR":
+                        server = "172.32.55.33";
+                        database = "db_komunala_kranj";
+                        user = "3tav_Admin_sql";
+                        pass = "KranjSQL123!";
+                        exportId = "REK_IzvozXML";
+                        exportArgs = "1469;xml,html";
+                        xmlPath = "c:\\temp\\rek\\REK_izvozXML_1469.xml";
                         break;
                     default:
                         server = "srvce96";
